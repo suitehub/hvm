@@ -1,0 +1,6 @@
+{
+  "name": "HVM Digital Performance",
+  "description": "Estratégias personalizadas, gestão de tráfego e marketing orientado por dados para escalar seu negócio todos os meses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
