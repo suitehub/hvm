@@ -13,7 +13,7 @@ export function GrowFast() {
             loading="lazy"
             width={1200}
             height={912}
-            className="w-full rounded-2xl [mask-image:radial-gradient(115%_105%_at_50%_50%,black_60%,transparent_94%)]"
+            className="w-full rounded-2xl border border-border/40 shadow-2xl object-cover"
           />
         </div>
 

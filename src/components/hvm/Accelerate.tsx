@@ -75,7 +75,7 @@ export function Accelerate() {
             loading="lazy"
             width={1200}
             height={1008}
-            className="w-full rounded-2xl [mask-image:radial-gradient(115%_105%_at_50%_50%,black_58%,transparent_92%)]"
+            className="w-full rounded-2xl border border-border/40 shadow-2xl object-cover"
           />
           <article className="absolute left-[6%] top-[8%] w-[124px] rounded-xl bg-primary p-3 text-primary-foreground shadow-lg">
             <p className="text-[9px] opacity-80">Investimento</p>

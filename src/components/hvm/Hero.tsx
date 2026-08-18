@@ -78,7 +78,7 @@ export function Hero() {
                 alt="Especialista da HVM analisando dashboards de performance em múltiplos monitores"
                 width={1408}
                 height={1200}
-                className="w-full [mask-image:radial-gradient(120%_100%_at_60%_45%,black_55%,transparent_88%)]"
+                className="w-full rounded-2xl border border-border/40 shadow-2xl object-cover"
               />
               <span className="pointer-events-none absolute inset-x-6 bottom-1/3 top-1/4 -z-10 ambient-blue opacity-30" />
               <span className="pointer-events-none absolute bottom-[28%] left-[26%] text-center text-[clamp(1.5rem,3.4vw,2.4rem)] font-black leading-none tracking-tight text-foreground/85">

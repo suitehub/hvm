@@ -52,7 +52,7 @@ export function Authority() {
           loading="lazy"
           width={800}
           height={1008}
-          className="mx-auto w-40 opacity-80 [mask-image:radial-gradient(110%_100%_at_50%_50%,black_55%,transparent_92%)] lg:w-full"
+          className="mx-auto w-40 rounded-xl border border-border/30 opacity-90 object-cover lg:w-full"
         />
       </div>
     </section>

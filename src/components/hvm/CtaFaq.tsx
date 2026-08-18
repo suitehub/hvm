@@ -66,7 +66,7 @@ export function CtaFaq() {
             loading="lazy"
             width={800}
             height={1008}
-            className="mt-6 hidden w-40 opacity-70 [mask-image:radial-gradient(110%_100%_at_50%_50%,black_55%,transparent_92%)] lg:block"
+            className="mt-6 hidden w-40 rounded-xl border border-border/30 opacity-80 object-cover lg:block"
           />
         </div>
 
