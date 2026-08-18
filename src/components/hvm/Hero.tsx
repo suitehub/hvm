@@ -1,5 +1,5 @@
 import { ArrowUpRight, BarChart3, Crosshair, MessageCircle, TrendingUp } from "lucide-react";
-import heroMonitors from "@/assets/hero-monitors.jpg";
+import { heroMonitors } from "@/assets/images";
 import { Sparkline } from "./Sparkline";
 import { WHATSAPP } from "./site-data";
 

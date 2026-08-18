@@ -1,4 +1,4 @@
-import laptop from "@/assets/laptop-dashboard.jpg";
+import { laptop } from "@/assets/images";
 import { WHATSAPP } from "./site-data";
 
 export function GrowFast() {

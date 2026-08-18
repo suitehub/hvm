@@ -1,5 +1,5 @@
 import { LineChart, Megaphone, PenTool, Share2 } from "lucide-react";
-import chess from "@/assets/chess-strategy.jpg";
+import { chess } from "@/assets/images";
 import { WHATSAPP } from "./site-data";
 
 const STATS = [

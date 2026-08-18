@@ -1,4 +1,4 @@
-import chessAuthority from "@/assets/chess-authority.jpg";
+import { chessAuthority } from "@/assets/images";
 
 /** Logos reais dos clientes a serem fornecidos — placeholders identificáveis. */
 const CLIENTS = ["[Logo cliente 01]", "[Logo cliente 02]", "[Logo cliente 03]", "[Logo cliente 04]"];

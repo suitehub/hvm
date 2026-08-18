@@ -1,6 +1,6 @@
 import { AlertTriangle, MessageCircle, Minus, Plus } from "lucide-react";
 import { useState } from "react";
-import chessAuthority from "@/assets/chess-authority.jpg";
+import { chessAuthority } from "@/assets/images";
 import { WHATSAPP } from "./site-data";
 
 const FAQ = [
