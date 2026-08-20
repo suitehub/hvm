@@ -1,7 +1,10 @@
 import { laptop } from "@/assets/images";
 import { WHATSAPP } from "./site-data";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export function GrowFast() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative overflow-hidden py-16 lg:py-20">
       <div aria-hidden="true" className="pointer-events-none absolute left-0 top-1/4 size-[560px] ambient-blue opacity-25" />
@@ -9,7 +12,7 @@ export function GrowFast() {
         <div className="relative">
           <img
             src={laptop}
-            alt="Notebook e celular exibindo dashboard de performance da HVM"
+            alt={t.growFast.imgAlt}
             loading="lazy"
             width={1200}
             height={912}
@@ -19,20 +22,17 @@ export function GrowFast() {
 
         <div>
           <h2 className="text-[clamp(1.6rem,3.2vw,2.25rem)] font-extrabold leading-[1.15] tracking-[-0.02em] text-foreground">
-            <span className="text-gradient-blue">CRESÇA RÁPIDO</span> COM
-            <br />O PODER DA INTERNET.
+            <span className="text-gradient-blue">{t.growFast.titleHighlight}</span>{" "}
+            {t.growFast.titleRest}
           </h2>
           <p className="mt-6 max-w-lg text-[13.5px] leading-relaxed text-muted-foreground">
-            Se você quer acelerar o crescimento do seu negócio, precisa atrair mais pessoas e ter uma
-            estratégia montada e validada para converter leads em clientes.
+            {t.growFast.p1}
           </p>
           <p className="mt-4 max-w-lg text-[13.5px] leading-relaxed text-muted-foreground">
-            Quer saber como o seu negócio pode ganhar visibilidade e aumentar o seu poder de vendas? Fale
-            com um dos nossos especialistas e vamos te apresentar as ideias e o plano de ação mais
-            assertivo para o seu momento.
+            {t.growFast.p2}
           </p>
           <p className="mt-4 text-[13.5px] font-semibold text-cyan">
-            A HVM está aqui para te ajudar!
+            {t.growFast.p3}
           </p>
           <a
             href={WHATSAPP}
@@ -40,7 +40,7 @@ export function GrowFast() {
             rel="noreferrer"
             className="mt-7 inline-flex rounded-md bg-primary px-8 py-3.5 text-[13px] font-bold text-primary-foreground transition-all hover:brightness-110 hover:glow-blue"
           >
-            Falar com especialista
+            {t.growFast.ctaButton}
           </a>
         </div>
       </div>

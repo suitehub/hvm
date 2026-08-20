@@ -1,28 +1,31 @@
 import { Globe, Search, Share2 } from "lucide-react";
-
-const SERVICES = [
-  {
-    icon: Search,
-    title: ["POSICIONAMENTO NAS", "BUSCAS DO GOOGLE."],
-    text: "Seja encontrado por quem realmente está buscando pelos seus produtos ou serviços.",
-  },
-  {
-    icon: Share2,
-    title: ["META ADS: FACEBOOK", "& INSTAGRAM."],
-    text: "Alcance potenciais clientes, promova seus posts e conquiste mais resultados.",
-  },
-  {
-    icon: Globe,
-    title: ["DESIGN & WEB, SOCIAL", "MEDIA, BRANDING."],
-    text: "Sua empresa merece um visual impactante e presença de forma estratégica.",
-  },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export function Services() {
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      icon: Search,
+      title: [t.services.googleTitle1, t.services.googleTitle2],
+      text: t.services.googleDesc,
+    },
+    {
+      icon: Share2,
+      title: [t.services.metaTitle1, t.services.metaTitle2],
+      text: t.services.metaDesc,
+    },
+    {
+      icon: Globe,
+      title: [t.services.designTitle1, t.services.designTitle2],
+      text: t.services.designDesc,
+    },
+  ];
+
   return (
     <section id="servicos" className="py-14 lg:py-16">
       <div className="mx-auto grid max-w-[1200px] gap-5 px-5 md:grid-cols-3 lg:px-8">
-        {SERVICES.map(({ icon: Icon, title, text }) => (
+        {services.map(({ icon: Icon, title, text }) => (
           <article
             key={title[0]}
             className="group panel-card px-7 py-8 text-center transition-all duration-300 hover:border-primary/50 hover:glow-blue"

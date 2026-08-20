@@ -2,31 +2,10 @@ import { AlertTriangle, MessageCircle, Minus, Plus } from "lucide-react";
 import { useState } from "react";
 import { chessAuthority } from "@/assets/images";
 import { WHATSAPP } from "./site-data";
-
-const FAQ = [
-  {
-    q: "Por que a HVM é a melhor escolha?",
-    a: "Porque unimos estratégia, gestão de tráfego, design e análise de dados em um único time focado em receita e previsibilidade.",
-  },
-  {
-    q: "Como a HVM pode impulsionar minhas vendas?",
-    a: "Estruturamos campanhas orientadas por dados, otimizamos o funil de conversão e acompanhamos as métricas diariamente para escalar o que gera resultado.",
-  },
-  {
-    q: "Quais países posso esperar resultados com a HVM?",
-    a: "Atendemos negócios no Brasil e operações internacionais, adaptando estratégia, idioma e canais ao mercado de atuação.",
-  },
-  {
-    q: "Como funciona o relatório com a HVM?",
-    a: "Você recebe relatórios periódicos com investimento, leads, custo por resultado e faturamento gerado, além de reuniões de acompanhamento.",
-  },
-  {
-    q: "Quais serviços vocês prestam?",
-    a: "Gestão de tráfego pago, SEO e posicionamento no Google, mídias sociais, design, web e branding orientado a performance.",
-  },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export function CtaFaq() {
+  const { t } = useLanguage();
   const [open, setOpen] = useState<number | null>(0);
 
   return (
@@ -39,16 +18,14 @@ export function CtaFaq() {
             <header className="flex items-start gap-3">
               <AlertTriangle className="mt-0.5 size-5 shrink-0 text-cyan" />
               <div>
-                <p className="text-[13px] font-bold text-cyan">ATENÇÃO!</p>
+                <p className="text-[13px] font-bold text-cyan">{t.ctaFaq.warningTag}</p>
                 <p className="text-[13px] font-bold text-foreground">
-                  Acelere seu crescimento agora com a HVM
+                  {t.ctaFaq.warningTitle}
                 </p>
               </div>
             </header>
             <p className="mt-4 text-[11.5px] leading-relaxed text-muted-foreground">
-              Pronto para elevar seu negócio a um novo nível com a HVM? Simplesmente clique no botão
-              abaixo, preencha o formulário e nossa equipe de especialistas fará contato para dar início a
-              sua transformação.
+              {t.ctaFaq.warningDesc}
             </p>
             <a
               href={WHATSAPP}
@@ -56,7 +33,7 @@ export function CtaFaq() {
               rel="noreferrer"
               className="mt-5 block rounded-md bg-primary px-5 py-3 text-center text-[12px] font-bold text-primary-foreground transition-all hover:brightness-110 hover:glow-blue"
             >
-              Eleve seu Negócio Agora!
+              {t.ctaFaq.warningCta}
             </a>
           </article>
           <img
@@ -73,12 +50,12 @@ export function CtaFaq() {
         {/* FAQ */}
         <div>
           <h2 className="text-[clamp(1.1rem,2vw,1.4rem)] font-extrabold text-foreground">
-            Perguntas
+            {t.ctaFaq.faqTitle}
             <br />
-            <span className="text-gradient-blue">Frequentes</span>
+            <span className="text-gradient-blue">{t.ctaFaq.faqHighlight}</span>
           </h2>
           <ul className="mt-6 space-y-2.5">
-            {FAQ.map((item, i) => {
+            {t.ctaFaq.faqItems.map((item, i) => {
               const isOpen = open === i;
               return (
                 <li key={item.q} className="panel-card overflow-hidden">
@@ -113,12 +90,12 @@ export function CtaFaq() {
         {/* Dúvidas */}
         <div>
           <h2 className="text-[clamp(1.1rem,2vw,1.4rem)] font-extrabold leading-snug text-foreground">
-            Ainda ficou com
+            {t.ctaFaq.doubtTitle1}
             <br />
-            alguma dúvida?
+            {t.ctaFaq.doubtTitle2}
           </h2>
           <p className="mt-4 text-[11.5px] leading-relaxed text-muted-foreground">
-            Chame no WhatsApp, envie sua dúvida e converse direto com um dos nossos especialistas.
+            {t.ctaFaq.doubtDesc}
           </p>
           <a
             href={WHATSAPP}
@@ -127,7 +104,7 @@ export function CtaFaq() {
             className="mt-5 inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-[12px] font-bold text-primary-foreground transition-all hover:brightness-110 hover:glow-blue"
           >
             <MessageCircle className="size-4" />
-            Chamar no WhatsApp
+            {t.ctaFaq.doubtCta}
           </a>
         </div>
       </div>

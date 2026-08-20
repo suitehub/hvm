@@ -1,11 +1,22 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
-import { NAV, WHATSAPP } from "./site-data";
+import { WHATSAPP } from "./site-data";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
+
+  const navItems = [
+    { label: t.nav.services, href: "#servicos" },
+    { label: t.nav.howItWorks, href: "#como-funciona" },
+    { label: t.nav.cases, href: "#cases" },
+    { label: t.nav.about, href: "#sobre" },
+    { label: t.nav.faq, href: "#faq" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -24,7 +35,7 @@ export function Navbar() {
         <Logo />
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Navegação principal">
-          {NAV.map((item) => (
+          {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
@@ -36,13 +47,15 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <LanguageSwitcher />
+          
           <a
             href={WHATSAPP}
             target="_blank"
             rel="noreferrer"
             className="hidden items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-[13px] font-semibold text-primary-foreground transition-all hover:brightness-110 hover:glow-blue sm:inline-flex"
           >
-            Falar com especialista
+            {t.nav.ctaButton}
             <span className="grid size-5 place-items-center rounded-full bg-primary-foreground/20 text-[10px]">
               ↗
             </span>
@@ -61,7 +74,7 @@ export function Navbar() {
       {open && (
         <div className="border-t border-border bg-background/95 px-5 py-4 backdrop-blur-xl lg:hidden">
           <nav className="flex flex-col gap-1">
-            {NAV.map((item) => (
+            {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
@@ -77,7 +90,7 @@ export function Navbar() {
               rel="noreferrer"
               className="mt-2 rounded-full bg-primary px-5 py-2.5 text-center text-sm font-semibold text-primary-foreground"
             >
-              Falar com especialista
+              {t.nav.ctaButton}
             </a>
           </nav>
         </div>

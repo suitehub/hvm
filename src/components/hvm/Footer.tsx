@@ -1,14 +1,6 @@
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import { Logo } from "./Logo";
-import { NAV } from "./site-data";
-
-const SERVICES = [
-  "Gestão de Tráfego Pago",
-  "Posicionamento no Google",
-  "Mídias Sociais",
-  "Design & Branding",
-  "Web Design",
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const SOCIALS = [
   { icon: Instagram, label: "Instagram" },
@@ -18,20 +10,30 @@ const SOCIALS = [
 ];
 
 export function Footer() {
+  const { t } = useLanguage();
+
+  const navItems = [
+    { label: t.nav.services, href: "#servicos" },
+    { label: t.nav.howItWorks, href: "#como-funciona" },
+    { label: t.nav.cases, href: "#cases" },
+    { label: t.nav.about, href: "#sobre" },
+    { label: t.nav.faq, href: "#faq" },
+  ];
+
   return (
     <footer className="border-t border-border py-12">
       <div className="mx-auto grid max-w-[1200px] gap-10 px-5 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div>
           <Logo />
           <p className="mt-4 max-w-[220px] text-[11px] leading-relaxed text-muted-foreground">
-            Estratégia, tráfego e performance para escalar o que importa.
+            {t.footer.slogan}
           </p>
         </div>
 
         <nav aria-label="Navegação do rodapé">
-          <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-cyan">Navegação</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-cyan">{t.footer.navTitle}</p>
           <ul className="mt-4 space-y-2">
-            {NAV.map((n) => (
+            {navItems.map((n) => (
               <li key={n.href}>
                 <a
                   href={n.href}
@@ -45,9 +47,9 @@ export function Footer() {
         </nav>
 
         <div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-cyan">Serviços</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-cyan">{t.footer.servicesTitle}</p>
           <ul className="mt-4 space-y-2">
-            {SERVICES.map((s) => (
+            {t.footer.servicesList.map((s) => (
               <li key={s} className="text-[11.5px] text-muted-foreground">
                 {s}
               </li>
@@ -56,11 +58,11 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-cyan">Contato</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-cyan">{t.footer.contactTitle}</p>
           <ul className="mt-4 space-y-2 text-[11.5px] text-muted-foreground">
-            <li>[telefone / WhatsApp]</li>
-            <li>[e-mail de contato]</li>
-            <li>[cidade — estado]</li>
+            <li>{t.footer.contactPhone}</li>
+            <li>{t.footer.contactEmail}</li>
+            <li>{t.footer.contactLocation}</li>
           </ul>
           <ul className="mt-5 flex gap-3">
             {SOCIALS.map(({ icon: Icon, label }) => (
@@ -80,7 +82,7 @@ export function Footer() {
 
       <div className="mx-auto mt-10 max-w-[1200px] border-t border-border px-5 pt-6 lg:px-8">
         <p className="text-[10.5px] text-muted-foreground">
-          © {new Date().getFullYear()} HVM Digital Performance. Desenvolvido com performance.
+          {t.footer.copyright}
         </p>
       </div>
     </footer>

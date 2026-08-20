@@ -2,16 +2,19 @@ import { ArrowUpRight, BarChart3, Crosshair, MessageCircle, TrendingUp } from "l
 import { heroMonitors } from "@/assets/images";
 import { Sparkline } from "./Sparkline";
 import { WHATSAPP } from "./site-data";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const PARTNERS = ["Google Partner", "Meta Business Partner", "RD Station Partner", "Google Analytics"];
 
-const DIFFS = [
-  { icon: Crosshair, label: "Estratégias\npersonalizadas" },
-  { icon: BarChart3, label: "Foco em dados\ne resultados" },
-  { icon: TrendingUp, label: "Acompanhamento\npróximo" },
-];
-
 export function Hero() {
+  const { t } = useLanguage();
+
+  const diffs = [
+    { icon: Crosshair, label: t.hero.diff1 },
+    { icon: BarChart3, label: t.hero.diff2 },
+    { icon: TrendingUp, label: t.hero.diff3 },
+  ];
+
   return (
     <section id="top" className="relative overflow-hidden pt-16">
       {/* elemento circular azul ao fundo */}
@@ -26,18 +29,17 @@ export function Hero() {
           {/* Coluna esquerda */}
           <div className="relative z-10">
             <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-cyan">
-              Agência de marketing digital
+              {t.hero.badge}
             </p>
             <h1 className="mt-5 text-[clamp(2.25rem,5.2vw,3.5rem)] font-extrabold leading-[1.06] tracking-[-0.03em] text-foreground">
-              Performance que
+              {t.hero.titleLine1}
               <br />
-              <span className="text-gradient-blue">gera crescimento</span>
+              <span className="text-gradient-blue">{t.hero.titleHighlight}</span>
               <br />
-              de verdade<span className="text-cyan">.</span>
+              {t.hero.titleLine3}<span className="text-cyan">.</span>
             </h1>
             <p className="mt-6 max-w-md text-[13.5px] leading-relaxed text-muted-foreground">
-              Estratégias personalizadas, gestão de tráfego e marketing orientado por dados para escalar
-              seu negócio todos os meses.
+              {t.hero.description}
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -48,18 +50,18 @@ export function Hero() {
                 className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-[13px] font-bold text-primary-foreground transition-all hover:brightness-110 hover:glow-blue"
               >
                 <MessageCircle className="size-4" />
-                Quero escalar meu negócio
+                {t.hero.ctaPrimary}
               </a>
               <a
                 href="#cases"
                 className="inline-flex items-center rounded-md border border-border px-6 py-3.5 text-[13px] font-semibold text-foreground transition-colors hover:border-primary/60 hover:bg-accent"
               >
-                Ver cases reais
+                {t.hero.ctaSecondary}
               </a>
             </div>
 
             <ul className="mt-10 flex flex-wrap gap-x-8 gap-y-4">
-              {DIFFS.map(({ icon: Icon, label }) => (
+              {diffs.map(({ icon: Icon, label }) => (
                 <li key={label} className="flex items-center gap-2.5">
                   <Icon className="size-4 shrink-0 text-cyan" />
                   <span className="whitespace-pre-line text-[11px] leading-tight text-muted-foreground">
@@ -75,7 +77,7 @@ export function Hero() {
             <div className="relative">
               <img
                 src={heroMonitors}
-                alt="Especialista da HVM analisando dashboards de performance em múltiplos monitores"
+                alt={t.hero.imgAlt}
                 width={1408}
                 height={1200}
                 className="w-full rounded-2xl border border-border/40 shadow-2xl object-cover"
@@ -92,19 +94,19 @@ export function Hero() {
             </div>
 
             <article className="absolute -top-2 right-[16%] w-[172px] panel-card p-3.5 backdrop-blur-md sm:w-[196px]">
-              <p className="text-[10px] text-muted-foreground">Faturamento gerado</p>
-              <p className="mt-1 text-lg font-bold text-foreground">R$ 1.280.000</p>
+              <p className="text-[10px] text-muted-foreground">{t.hero.revenueLabel}</p>
+              <p className="mt-1 text-lg font-bold text-foreground">{t.hero.revenueValue}</p>
               <p className="mt-1 flex items-center gap-1 text-[10px] font-semibold text-cyan">
-                <ArrowUpRight className="size-3" /> 137% vs. período anterior
+                <ArrowUpRight className="size-3" /> {t.hero.revenueGrowth}
               </p>
               <Sparkline className="mt-2 h-8 w-full" />
             </article>
 
             <article className="absolute bottom-[14%] right-0 w-[160px] panel-card p-3.5 backdrop-blur-md sm:w-[182px]">
-              <p className="text-[10px] text-muted-foreground">Leads gerados</p>
-              <p className="mt-1 text-lg font-bold text-foreground">2.642</p>
+              <p className="text-[10px] text-muted-foreground">{t.hero.leadsLabel}</p>
+              <p className="mt-1 text-lg font-bold text-foreground">{t.hero.leadsValue}</p>
               <p className="mt-1 flex items-center gap-1 text-[10px] font-semibold text-cyan">
-                <ArrowUpRight className="size-3" /> 190% vs. período anterior
+                <ArrowUpRight className="size-3" /> {t.hero.leadsGrowth}
               </p>
               <Sparkline className="mt-2 h-8 w-full" />
             </article>
@@ -114,9 +116,9 @@ export function Hero() {
         {/* Barra de parceiros */}
         <div className="mb-16 flex flex-col gap-6 panel-card px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <p className="text-[15px] font-semibold leading-snug text-foreground">
-            Estratégia, tráfego e performance.
+            {t.hero.partnersTitle1}
             <br />
-            Tudo <span className="text-cyan">em um só lugar.</span>
+            {t.hero.partnersTitle2} <span className="text-cyan">{t.hero.partnersHighlight}</span>
           </p>
           <ul className="grid grid-cols-2 items-center gap-6 sm:grid-cols-4 lg:gap-10">
             {PARTNERS.map((p) => (
