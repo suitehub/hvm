@@ -1,6 +1,7 @@
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Facebook, Instagram, Linkedin, MessageCircle, Phone, Youtube } from "lucide-react";
 import { Logo } from "./Logo";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { WHATSAPP } from "./site-data";
 
 const SOCIALS = [
   { icon: Instagram, label: "Instagram" },
@@ -59,8 +60,18 @@ export function Footer() {
 
         <div>
           <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-cyan">{t.footer.contactTitle}</p>
-          <ul className="mt-4 space-y-2 text-[11.5px] text-muted-foreground">
-            <li>{t.footer.contactPhone}</li>
+          <ul className="mt-4 space-y-2.5 text-[11.5px] text-muted-foreground">
+            <li>
+              <a
+                href={WHATSAPP}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 font-medium text-foreground transition-colors hover:text-cyan"
+              >
+                <MessageCircle className="size-3.5 text-cyan" />
+                {t.footer.contactPhone}
+              </a>
+            </li>
             <li>{t.footer.contactEmail}</li>
             <li>{t.footer.contactLocation}</li>
           </ul>
