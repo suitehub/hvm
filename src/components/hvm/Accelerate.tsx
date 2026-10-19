@@ -80,16 +80,6 @@ export function Accelerate() {
             height={1008}
             className="w-full rounded-2xl border border-border/40 shadow-2xl object-cover"
           />
-          <article className="absolute left-[6%] top-[8%] w-[124px] rounded-xl bg-primary p-3 text-primary-foreground shadow-lg">
-            <p className="text-[9px] opacity-80">{t.accelerate.investmentLabel}</p>
-            <p className="mt-1 text-base font-bold">3480<span className="text-[10px]">{t.accelerate.investmentPeriod}</span></p>
-            <p className="mt-1 text-[9px] opacity-80">{t.accelerate.roiLabel}</p>
-          </article>
-          <article className="absolute bottom-[6%] left-0 w-[190px] panel-card p-3.5">
-            <p className="text-[10px] text-muted-foreground">{t.accelerate.organicGrowthLabel}</p>
-            <p className="mt-1 text-base font-bold text-foreground">68%</p>
-            <p className="mt-1 text-[9px] text-muted-foreground">{t.accelerate.organicGrowthPeriod}</p>
-          </article>
         </div>
       </div>
     </section>
