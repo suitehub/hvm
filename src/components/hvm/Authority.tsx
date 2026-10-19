@@ -13,7 +13,7 @@ export function Authority() {
   return (
     <section className="relative overflow-hidden py-16 lg:py-20">
       <div aria-hidden="true" className="pointer-events-none absolute right-1/4 top-0 size-[520px] ambient-blue opacity-20" />
-      <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 px-5 lg:grid-cols-[minmax(0,38%)_minmax(0,42%)_minmax(0,20%)] lg:px-8">
+      <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 px-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,320px)] lg:px-8">
         <div>
           <h2 className="text-[clamp(1.2rem,2.2vw,1.5rem)] font-extrabold leading-snug tracking-[-0.02em] text-foreground">
             {t.authority.title1}
@@ -22,7 +22,7 @@ export function Authority() {
             <br />
             {t.authority.title3Prefix} <span className="text-cyan">{t.authority.title3Highlight}</span>
           </h2>
-          <p className="mt-5 max-w-sm text-[12px] leading-relaxed text-muted-foreground">
+          <p className="mt-5 max-w-lg text-[13px] leading-relaxed text-muted-foreground">
             {t.authority.description}
           </p>
           <dl className="mt-8 flex flex-wrap gap-8">
@@ -36,25 +36,16 @@ export function Authority() {
           </dl>
         </div>
 
-        <ul className="grid grid-cols-2 gap-x-6 gap-y-8">
-          {t.authority.clientPlaceholders.map((c) => (
-            <li
-              key={c}
-              className="grid h-14 place-items-center rounded-lg border border-dashed border-border text-[11px] font-semibold text-muted-foreground"
-            >
-              {c}
-            </li>
-          ))}
-        </ul>
-
-        <img
-          src={chessAuthority}
-          alt={t.authority.imgAlt}
-          loading="lazy"
-          width={800}
-          height={1008}
-          className="mx-auto w-40 rounded-xl border border-border/30 opacity-90 object-cover lg:w-full"
-        />
+        <div className="flex justify-center lg:justify-end">
+          <img
+            src={chessAuthority}
+            alt={t.authority.imgAlt}
+            loading="lazy"
+            width={800}
+            height={1008}
+            className="w-48 sm:w-64 lg:w-72 rounded-xl border border-border/30 opacity-90 object-cover shadow-2xl"
+          />
+        </div>
       </div>
     </section>
   );
