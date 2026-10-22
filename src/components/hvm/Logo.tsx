@@ -1,12 +1,40 @@
-export function Logo({ className = "" }: { className?: string }) {
+import { useState } from "react";
+import logoHorizontalBranco from "@/assets/logohorizontalbranco.png";
+import logoBranca from "@/assets/logobranca.png";
+
+interface LogoProps {
+  className?: string;
+  variant?: "top" | "footer" | "horizontal" | "icon";
+  showText?: boolean;
+}
+
+export function Logo({ className = "", variant = "top" }: LogoProps) {
+  const [imgError, setImgError] = useState(false);
+  const isTop = variant === "top" || variant === "horizontal";
+  const imageSrc = isTop ? logoHorizontalBranco : logoBranca;
+
   return (
-    <a href="#top" className={`flex items-center gap-2 ${className}`} aria-label="HVM Digital Performance">
-      <span className="text-xl font-black tracking-tight text-foreground">HVM</span>
-      <span className="hidden text-[8px] font-semibold uppercase leading-[1.25] tracking-[0.18em] text-muted-foreground sm:block">
-        Digital
-        <br />
-        Performance
-      </span>
+    <a
+      href="#top"
+      className={`group inline-flex items-center transition-opacity hover:opacity-90 ${className}`}
+      aria-label="HVM Digital Performance"
+    >
+      {!imgError ? (
+        <img
+          src={imageSrc}
+          alt="HVM Digital Performance"
+          className={`${
+            isTop
+              ? "h-9 sm:h-10 md:h-11 w-auto max-w-[220px] sm:max-w-[260px]"
+              : "h-9 sm:h-10 w-auto max-w-[180px]"
+          } object-contain transition-transform duration-200 group-hover:scale-[1.02]`}
+          onError={() => setImgError(true)}
+        />
+      ) : (
+        <span className="text-xl font-black tracking-tight text-white">
+          HVM <span className="text-cyan font-bold">↗</span>
+        </span>
+      )}
     </a>
   );
 }

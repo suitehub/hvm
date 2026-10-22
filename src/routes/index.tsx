@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/hvm/Navbar";
 import { Hero } from "@/components/hvm/Hero";
+import { AboutUs } from "@/components/hvm/AboutUs";
 import { Accelerate } from "@/components/hvm/Accelerate";
 import { GrowFast } from "@/components/hvm/GrowFast";
 import { Services } from "@/components/hvm/Services";
@@ -9,10 +10,11 @@ import { Testimonials } from "@/components/hvm/Testimonials";
 import { Authority } from "@/components/hvm/Authority";
 import { CtaFaq } from "@/components/hvm/CtaFaq";
 import { Footer } from "@/components/hvm/Footer";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 
 const TITLE = "HVM Digital Performance | Marketing digital que gera crescimento";
 const DESCRIPTION =
-  "Estratégias personalizadas, gestão de tráfego e marketing orientado por dados para escalar seu negócio todos os meses.";
+  "Estratégias personalizadas, gestão de tráfego pago e marketing orientado por dados para escalar seu negócio todos os meses.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,19 +32,22 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen scroll-smooth bg-background font-sans antialiased">
-      <Navbar />
-      <main>
-        <Hero />
-        <Accelerate />
-        <GrowFast />
-        <Services />
-        <Process />
-        <Testimonials />
-        <Authority />
-        <CtaFaq />
-      </main>
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen scroll-smooth bg-background font-sans antialiased text-foreground">
+        <Navbar />
+        <main>
+          <Hero />
+          <AboutUs />
+          <Accelerate />
+          <GrowFast />
+          <Services />
+          <Process />
+          <Testimonials />
+          <Authority />
+          <CtaFaq />
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }

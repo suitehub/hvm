@@ -1,48 +1,61 @@
 import { useLanguage } from "@/i18n/LanguageContext";
+import { CheckCircle2, Compass, Cpu, LineChart, Target, Zap } from "lucide-react";
 
 export function Process() {
   const { t } = useLanguage();
 
-  const steps = [
-    { n: "01", text: t.process.step1 },
-    { n: "02", text: t.process.step2 },
-    { n: "03", text: t.process.step3 },
-    { n: "04", text: t.process.step4 },
-    { n: "05", text: t.process.step5 },
-  ];
+  const stepIcons = [Target, Compass, Cpu, Zap, LineChart];
 
   return (
-    <section id="como-funciona" className="py-16 lg:py-20">
-      <div className="mx-auto max-w-[1200px] px-5 lg:px-8">
-        <h2 className="text-center text-[clamp(1.35rem,2.6vw,1.75rem)] font-extrabold tracking-[-0.02em] text-foreground">
-          {t.process.title.includes("HVM") ? (
-            <>
-              {t.process.title.split("HVM")[0]}
-              <span className="border-b-2 border-primary pb-1 text-gradient-blue">HVM</span>
-              {t.process.title.split("HVM")[1]}
-            </>
-          ) : (
-            t.process.title
-          )}
-        </h2>
+    <section id="como-funciona" className="relative py-20 lg:py-24">
+      <div className="mx-auto max-w-[1240px] px-5 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto">
+          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-cyan">
+            Metodologia & Execução
+          </span>
+          <h2 className="mt-3 text-[clamp(1.6rem,3.2vw,2.4rem)] font-extrabold tracking-tight text-foreground">
+            {t.process.title}
+          </h2>
+          <p className="mt-3 text-sm text-muted-foreground">
+            {t.process.subtitle || "Uma metodologia estruturada passo a passo para transformar tráfego em vendas consistentes:"}
+          </p>
+        </div>
 
-        <ol className="relative mt-14 grid gap-y-12 md:grid-cols-3 lg:grid-cols-5">
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute left-0 right-0 top-[7px] hidden h-px bg-gradient-to-r from-transparent via-primary/45 to-transparent lg:block"
-          />
-          {steps.map((s) => (
-            <li key={s.n} className="relative pr-6">
-              <span className="relative z-10 grid size-3.5 place-items-center rounded-full bg-primary glow-blue">
-                <span className="size-1 rounded-full bg-primary-foreground" />
-              </span>
-              <p className="mt-5 text-[11px] font-bold tracking-[0.18em] text-cyan">{s.n}</p>
-              <p className="mt-2 max-w-[220px] text-[12px] leading-relaxed text-muted-foreground">
-                {s.text}
-              </p>
-            </li>
-          ))}
-        </ol>
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          {t.process.steps.map((step, index) => {
+            const Icon = stepIcons[index % stepIcons.length];
+            return (
+              <article
+                key={step.number}
+                className="group relative flex flex-col justify-between rounded-2xl border border-white/10 bg-card/60 p-6 backdrop-blur-md transition-all duration-300 hover:border-cyan/50 hover:bg-card/90 hover:shadow-xl hover:shadow-cyan/5"
+              >
+                <div>
+                  <div className="flex items-center justify-between">
+                    <span className="grid size-11 place-items-center rounded-xl bg-primary/20 text-cyan transition-colors group-hover:bg-cyan group-hover:text-black">
+                      <Icon className="size-5" />
+                    </span>
+                    <span className="font-mono text-sm font-extrabold text-cyan">
+                      {step.number}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-5 text-[14px] font-bold text-foreground group-hover:text-cyan transition-colors">
+                    {step.title}
+                  </h3>
+
+                  <p className="mt-3 text-[12px] leading-relaxed text-muted-foreground">
+                    {step.desc}
+                  </p>
+                </div>
+
+                <div className="mt-6 flex items-center gap-1.5 text-[11px] font-semibold text-cyan/80">
+                  <CheckCircle2 className="size-3.5" />
+                  <span>Etapa Validada</span>
+                </div>
+              </article>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
