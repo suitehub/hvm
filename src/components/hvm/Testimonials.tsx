@@ -34,19 +34,19 @@ export function Testimonials() {
   };
 
   return (
-    <section id="cases" className="relative py-20 lg:py-28 bg-gradient-to-b from-transparent via-cyan/5 to-transparent">
+    <section id="cases" className="relative py-20 lg:py-28 bg-gradient-to-b from-white via-blue-50/30 to-white">
       <div className="mx-auto max-w-[1100px] px-5 lg:px-8">
         <div className="text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-cyan">
+          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-primary">
             Casos de Sucesso & Resultados
           </span>
-          <h2 className="mt-3 text-[clamp(1.5rem,3vw,2.2rem)] font-extrabold leading-tight tracking-[-0.02em] text-foreground">
+          <h2 className="mt-3 text-[clamp(1.5rem,3vw,2.2rem)] font-extrabold leading-tight tracking-[-0.02em] text-slate-900">
             <span className="text-gradient-blue">{t.testimonials.titleHighlight}</span>{" "}
             {t.testimonials.titleRest1}
             <br />
             {t.testimonials.titleRest2}
           </h2>
-          <p className="mt-3 text-xs text-muted-foreground">
+          <p className="mt-3 text-xs text-slate-600">
             Resultados reais de empresas que escalaram sua operação com a HVM Digital Performance.
           </p>
         </div>
@@ -56,23 +56,23 @@ export function Testimonials() {
           {visible.map((item, idx) => (
             <article
               key={`${page}-${idx}`}
-              className="relative rounded-2xl border border-white/10 bg-card/70 p-6 backdrop-blur-md shadow-xl transition-all duration-300 hover:border-cyan/40 hover:shadow-cyan/5"
+              className="relative rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-primary hover:shadow-xl hover:shadow-blue-500/10"
             >
-              <Quote className="absolute right-5 top-5 size-8 text-white/5 pointer-events-none" />
+              <Quote className="absolute right-5 top-5 size-8 text-blue-100 pointer-events-none" />
 
               <header className="flex items-start gap-3.5">
                 {/* Avatar elegante com iniciais estilizadas (sem imagens não autorizadas) */}
-                <div className="grid size-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary to-cyan text-xs font-black text-white shadow-md">
+                <div className="grid size-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary to-blue-400 text-xs font-black text-white shadow-md">
                   {getInitials(item.name)}
                 </div>
 
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2">
-                    <p className="truncate text-sm font-bold text-foreground">{item.name}</p>
-                    <CheckCircle className="size-3.5 text-cyan" />
+                    <p className="truncate text-sm font-bold text-slate-900">{item.name}</p>
+                    <CheckCircle className="size-3.5 text-primary" />
                   </div>
-                  <p className="truncate text-[11px] text-muted-foreground">
-                    {item.role} • <span className="text-foreground/80 font-medium">{item.company}</span>
+                  <p className="truncate text-[11px] text-slate-500">
+                    {item.role} • <span className="text-slate-800 font-semibold">{item.company}</span>
                   </p>
                 </div>
 
@@ -81,18 +81,18 @@ export function Testimonials() {
 
               <div className="mt-4 flex gap-1" aria-label="5 de 5 estrelas">
                 {Array.from({ length: 5 }).map((_, s) => (
-                  <Star key={s} className="size-3.5 fill-cyan text-cyan" />
+                  <Star key={s} className="size-3.5 fill-amber-400 text-amber-400" />
                 ))}
               </div>
 
-              <p className="mt-4 text-[13px] leading-relaxed text-muted-foreground italic">
+              <p className="mt-4 text-[13px] leading-relaxed text-slate-600 italic">
                 "{item.text}"
               </p>
 
               {/* Métrica de Destaque */}
               {item.metric && (
-                <div className="mt-5 flex items-center gap-2 rounded-lg border border-cyan/20 bg-cyan/10 px-3 py-2 text-xs font-bold text-cyan">
-                  <TrendingUp className="size-4 shrink-0 text-cyan" />
+                <div className="mt-5 flex items-center gap-2 rounded-lg border border-blue-200 bg-blue-50/80 px-3 py-2 text-xs font-bold text-primary">
+                  <TrendingUp className="size-4 shrink-0 text-primary" />
                   <span>{item.metric}</span>
                 </div>
               )}
@@ -110,7 +110,7 @@ export function Testimonials() {
                 aria-label={`Ver página de depoimentos ${i + 1}`}
                 onClick={() => setPage(i)}
                 className={`h-2 rounded-full transition-all ${
-                  i === page ? "w-8 bg-cyan" : "w-2 bg-border hover:bg-muted-foreground"
+                  i === page ? "w-8 bg-primary" : "w-2 bg-slate-200 hover:bg-slate-300"
                 }`}
               />
             ))}

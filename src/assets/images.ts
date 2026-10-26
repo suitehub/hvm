@@ -1,17 +1,16 @@
-export {
-  heroMonitorsImg as heroMonitors,
-  laptopDashboardImg as laptop,
-  chessStrategyImg as chess,
-  chessAuthorityImg as chessAuthority,
-} from "./images-data";
-
-import growthDashboardImg from "./images/growth_dashboard_1792680633974.jpg";
-import founderProfileImg from "./images/founder_profile_1792680652367.jpg";
+import hvmHeroWorkstation from "./images/hvm_hero_workstation_1793034427260.jpg";
+import hvmGrowthScreen from "./images/hvm_growth_screen_1793034444209.jpg";
+import hvmStrategyBoard from "./images/hvm_strategy_board_1793034458310.jpg";
+import hvmAuthoritySeal from "./images/hvm_authority_seal_1793034491223.jpg";
+import hvmTrafficDesk from "./images/hvm_traffic_desk_1793034477479.jpg";
 import isabellaProfileImg from "./images/isabella_profile_1792680668647.jpg";
-import paidTrafficAnalyticsImg from "./images/paid_traffic_analytics_1792680686178.jpg";
 
-export const growthDashboard = growthDashboardImg;
-export const founderProfile = founderProfileImg;
+export const heroMonitors = hvmHeroWorkstation;
+export const growthDashboard = hvmGrowthScreen;
+export const strategyEngine = hvmStrategyBoard;
+export const chess = hvmStrategyBoard;
+export const authorityBadge = hvmAuthoritySeal;
+export const chessAuthority = hvmAuthoritySeal;
+export const paidTrafficAnalytics = hvmTrafficDesk;
+export const founderProfile = "/assets/hygor.jpeg";
 export const isabellaProfile = isabellaProfileImg;
-export const paidTrafficAnalytics = paidTrafficAnalyticsImg;
-

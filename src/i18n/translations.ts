@@ -341,8 +341,8 @@ export const translations: Record<Language, Translations> = {
       teamTitle: "Liderança e Estratégia",
       teamSubtitle:
         "À frente de cada projeto, profissionais com compromisso inegociável com os seus resultados:",
-      founderName: "Fundador & Estrategista-Chefe",
-      founderRole: "Diretor de Estratégia e Mídia de Performance",
+      founderName: "Hygor V. Miranda",
+      founderRole: "Fundador & Estrategista-Chefe",
       founderBio:
         "Especialista em inteligência de tráfego pago, planejamento de aquisição e escala de negócios. Lidera o direcionamento comercial, a otimização de campanhas e a arquitetura de dados que já alavancaram mais de 100 projetos com alta taxa de rentabilidade.",
       isabellaName: "Isabella",
@@ -673,8 +673,8 @@ export const translations: Record<Language, Translations> = {
       teamTitle: "Leadership & Strategic Direction",
       teamSubtitle:
         "At the helm of every campaign, senior leaders committed to your outcomes:",
-      founderName: "Founder & Head Strategist",
-      founderRole: "Director of Performance Media & Growth Strategy",
+      founderName: "Hygor V. Miranda",
+      founderRole: "Founder & Head Strategist",
       founderBio:
         "Specialist in paid traffic architecture, customer acquisition economics, and enterprise scaling. Directs commercial roadmaps, media optimization, and data pipelines that have accelerated over 100 projects with outstanding profitability.",
       isabellaName: "Isabella",

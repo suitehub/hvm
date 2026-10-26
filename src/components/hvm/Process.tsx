@@ -7,16 +7,16 @@ export function Process() {
   const stepIcons = [Target, Compass, Cpu, Zap, LineChart];
 
   return (
-    <section id="como-funciona" className="relative py-20 lg:py-24">
+    <section id="como-funciona" className="relative py-20 lg:py-24 bg-slate-50/60 border-y border-slate-200/70">
       <div className="mx-auto max-w-[1240px] px-5 lg:px-8">
         <div className="text-center max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-cyan">
+          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-primary">
             Metodologia & Execução
           </span>
-          <h2 className="mt-3 text-[clamp(1.6rem,3.2vw,2.4rem)] font-extrabold tracking-tight text-foreground">
+          <h2 className="mt-3 text-[clamp(1.6rem,3.2vw,2.4rem)] font-extrabold tracking-tight text-slate-900">
             {t.process.title}
           </h2>
-          <p className="mt-3 text-sm text-muted-foreground">
+          <p className="mt-3 text-sm text-slate-600">
             {t.process.subtitle || "Uma metodologia estruturada passo a passo para transformar tráfego em vendas consistentes:"}
           </p>
         </div>
@@ -27,28 +27,28 @@ export function Process() {
             return (
               <article
                 key={step.number}
-                className="group relative flex flex-col justify-between rounded-2xl border border-white/10 bg-card/60 p-6 backdrop-blur-md transition-all duration-300 hover:border-cyan/50 hover:bg-card/90 hover:shadow-xl hover:shadow-cyan/5"
+                className="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-primary hover:shadow-xl hover:shadow-blue-500/10"
               >
                 <div>
                   <div className="flex items-center justify-between">
-                    <span className="grid size-11 place-items-center rounded-xl bg-primary/20 text-cyan transition-colors group-hover:bg-cyan group-hover:text-black">
+                    <span className="grid size-11 place-items-center rounded-xl bg-blue-50 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
                       <Icon className="size-5" />
                     </span>
-                    <span className="font-mono text-sm font-extrabold text-cyan">
+                    <span className="font-mono text-sm font-extrabold text-primary">
                       {step.number}
                     </span>
                   </div>
 
-                  <h3 className="mt-5 text-[14px] font-bold text-foreground group-hover:text-cyan transition-colors">
+                  <h3 className="mt-5 text-[14px] font-bold text-slate-900 group-hover:text-primary transition-colors">
                     {step.title}
                   </h3>
 
-                  <p className="mt-3 text-[12px] leading-relaxed text-muted-foreground">
+                  <p className="mt-3 text-[12px] leading-relaxed text-slate-600">
                     {step.desc}
                   </p>
                 </div>
 
-                <div className="mt-6 flex items-center gap-1.5 text-[11px] font-semibold text-cyan/80">
+                <div className="mt-6 flex items-center gap-1.5 text-[11px] font-bold text-primary">
                   <CheckCircle2 className="size-3.5" />
                   <span>Etapa Validada</span>
                 </div>

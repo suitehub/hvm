@@ -29,7 +29,7 @@ export function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "border-b border-white/10 bg-background/90 backdrop-blur-xl shadow-lg shadow-black/20" : "bg-transparent"
+        scrolled ? "border-b border-slate-200/80 bg-white/95 backdrop-blur-xl shadow-sm shadow-blue-900/5" : "bg-white/80 backdrop-blur-md border-b border-slate-100/60"
       }`}
     >
       <div className="mx-auto flex h-20 max-w-[1240px] items-center justify-between px-5 lg:px-8">
@@ -40,7 +40,7 @@ export function Navbar() {
             <a
               key={item.href}
               href={item.href}
-              className="text-[13px] font-medium text-muted-foreground transition-colors hover:text-white"
+              className="text-[13px] font-semibold text-slate-600 transition-colors hover:text-primary"
             >
               {item.label}
             </a>
@@ -56,9 +56,9 @@ export function Navbar() {
             target="_blank"
             rel="noreferrer"
             title="Falar com a Empresa: 11 93402-4647"
-            className="hidden items-center gap-1.5 rounded-full border border-white/20 bg-white/5 px-3.5 py-2 text-[12px] font-medium text-white transition-all hover:bg-white/10 hover:border-cyan/50 xl:inline-flex"
+            className="hidden items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50/80 px-3.5 py-2 text-[12px] font-bold text-primary transition-all hover:bg-blue-100 hover:border-primary/50 xl:inline-flex"
           >
-            <Phone className="size-3.5 text-cyan" />
+            <Phone className="size-3.5 text-primary" />
             <span>Empresa</span>
           </a>
 
