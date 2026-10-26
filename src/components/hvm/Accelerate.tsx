@@ -113,8 +113,8 @@ export function Accelerate() {
             />
             <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-xl border border-blue-200/90 bg-white/95 px-3.5 py-2 shadow-lg backdrop-blur-md">
               <span className="size-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-[11px] font-bold text-slate-900">Comitê Estratégico HVM</span>
-              <span className="text-[10px] font-semibold text-primary">• Roadmap 2024-2025</span>
+              <span className="text-[11px] font-bold text-slate-900">Planejamento Estratégico HVM</span>
+              <span className="text-[10px] font-semibold text-primary">• Métricas & Escala</span>
             </div>
           </div>
         </div>

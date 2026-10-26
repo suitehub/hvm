@@ -77,7 +77,7 @@ export function AboutUs() {
                 <img
                   src={isabellaProfile}
                   alt={a.isabellaName}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
                 <span className="absolute bottom-2 right-2 size-3.5 rounded-full bg-primary ring-4 ring-white" />
               </div>

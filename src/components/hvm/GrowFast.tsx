@@ -33,15 +33,15 @@ export function GrowFast() {
                   </span>
                   <div>
                     <p className="text-[11px] font-bold text-slate-900 uppercase tracking-wider">
-                      HVM Analytics • Crescimento Exponencial
+                      HVM Performance • Gestão Contínua
                     </p>
                     <p className="text-[10px] text-slate-500">
-                      Tecnologia & Otimização Contínua HVM
+                      Otimização Ativa de Campanhas Meta & Google
                     </p>
                   </div>
                 </div>
                 <span className="rounded-full bg-blue-50 border border-blue-200 px-3 py-1 text-[11px] font-extrabold text-primary">
-                  +315% Tráfego
+                  Crescimento Real
                 </span>
               </div>
             </div>
